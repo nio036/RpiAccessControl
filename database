@@ -1,0 +1,22 @@
+sudo mysql_secure_installation
+sudo mysql -u root -p
+	
+	CREATE DATABASE AccessControl;
+	CREATE USER 'AccessControlAdmin'@'localhost' IDENTIFIED BY 'password';
+	GRANT ALL PRIVILEGES ON AccessControl.* TO 'AccessControlAdmin'@'localhost';
+
+
+create table attendance(
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+   user_id INT UNSIGNED NOT NULL,
+   clock_in TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY ( id )
+);
+
+create table users(
+   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+   rfid_uid VARCHAR(255) NOT NULL,
+   name VARCHAR(255) NOT NULL,
+   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY ( id )
+);
