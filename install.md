@@ -66,24 +66,7 @@ to wire the RFID circuit up to the Raspberry Pi.
 	sudo mysql_secure_installation
 	sudo mysql -u root -p
 		
-		CREATE DATABASE AccessControl;
-		CREATE USER 'AccessControlAdmin'@'localhost' IDENTIFIED BY 'password';
-		GRANT ALL PRIVILEGES ON AccessControl.* TO 'AccessControlAdmin'@'localhost';
-
-	Running the following two commands will create the tables that we will rely on for storing data. We will explain the fields in these tables after we have created them.
-	
-	create table attendance(
-	   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
-	   user_id INT UNSIGNED NOT NULL,
-	   clock_in TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	   PRIMARY KEY ( id )
-	);
-	
-	create table users(
-	   id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
-	   rfid_uid VARCHAR(255) NOT NULL,
-	   name VARCHAR(255) NOT NULL,
-	   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	   PRIMARY KEY ( id )
-You can leave the MYSQL tool by typing exit;
-
+		CREATE DATABASE Admin_Panel;
+		CREATE USER 'AccessControlAdmin'@'localhost' IDENTIFIED BY 'qwerty';
+		GRANT ALL PRIVILEGES ON Admin_Panel.* TO 'AccessControlAdmin'@'localhost';
+	import the database dump
