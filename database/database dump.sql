@@ -63,7 +63,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `rfid_uid`, `del_rfid_uid`, `name`, `created`, `status`) VALUES
 (1, '', '946694718162', 'Test User 1', '2020-01-02 12:20:34', 0),
-(4, '946694718124', '946694718124', 'talha rafiq', '2020-02-12 21:07:27', 1);
+(4, '946694718124', '946694718124', 'test user2', '2020-02-12 21:07:27', 1);
 
 --
 -- Indexes for dumped tables

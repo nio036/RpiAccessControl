@@ -1,0 +1,8 @@
+sudo mysql_secure_installation
+sudo mysql -u root -p
+	
+	CREATE DATABASE Admin_Panel;
+	CREATE USER 'AccessControlAdmin'@'localhost' IDENTIFIED BY 'qwerty';
+	GRANT ALL PRIVILEGES ON Admin_Panel.* TO 'AccessControlAdmin'@'localhost';
+
+

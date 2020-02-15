@@ -7,15 +7,18 @@ import Adafruit_CharLCD as LCD
 
 db = mysql.connector.connect(
   host="localhost",
-  user="logsadmin",
+  user="AccessControlAdmin",
   passwd="qwerty",
-  database="logs"
+  database="Admin_Panel"
 )
 GPIO.setup(21,GPIO.OUT)
 cursor = db.cursor()
 reader = SimpleMFRC522()
 
 lcd = LCD.Adafruit_CharLCD(4, 24, 23, 17, 18, 22, 16, 2, 14);
+
+time.sleep(2)
+lcd.set_backlight(0)
 
 try:
   while True:

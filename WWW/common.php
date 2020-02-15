@@ -10,16 +10,8 @@ use Medoo\Medoo;
 //Modify these settings to match your own configuration.
 $database = new Medoo([
     'database_type' => 'mysql',
-    'database_name' => 'admin_panel',
+    'database_name' => 'Admin_Panel',
     'server'        => 'localhost',
-    'username'      => 'logsadmin',
+    'username'      => 'AccessControlAdmin',
     'password'      => 'qwerty'
 ]);
-
-// $database = new Medoo([
-//     'database_type' => 'mysql',
-//     'database_name' => 'logs',
-//     'server'        => 'localhost',
-//     'username'      => 'logsadmin',
-//     'password'      => 'qwerty'
-// ]);
