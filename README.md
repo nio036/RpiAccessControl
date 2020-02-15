@@ -9,7 +9,7 @@ I use this code https://github.com/pimylifeup/attendance-system-frontend which w
  
  In this project I am using 
  
- *Components
+ * Components
  
 	* raspberry pi 3
 	* RC522 NFC bored  Reader
