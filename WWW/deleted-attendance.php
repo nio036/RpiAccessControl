@@ -2,22 +2,25 @@
 require 'common.php';
 
 //Grab all users from our database
-$users = $database->select("users", [
-    'id',
-    'name',
-]);
+$users = $database->select("users", ['id','name',],["status[=]" => 0]);
 
 //Check if we have a year passed in through a get variable, otherwise use the current year
-if (isset($_GET['year'])) {
+if (isset($_GET['year']))
+{
     $current_year = int($_GET['year']);
-} else {
+}
+else
+{
     $current_year = date('Y');
 }
 
 //Check if we have a month passed in through a get variable, otherwise use the current year
-if (isset($_GET['month'])) {
+if (isset($_GET['month']))
+{
     $current_month = $_GET['month'];
-} else {
+}
+else
+{
     $current_month = date('n');
 }
 
@@ -49,7 +52,12 @@ $num_days = cal_days_in_month(CAL_GREGORIAN, $current_month, $current_year);
     </nav>
     <div class="container">
         <div class="row">
-            <h2>Access Log</h2>
+            <div class="col-md-6 p-3">
+                <h2 >Access Logs</h2>
+            </div>
+            <div class="col-md-6 text-right p-3">
+                <a href="attendance.php" class="btn btn-sm btn-success">Active User Attendance</a>
+            </div>
         </div>
         <table class="table table-striped table-responsive">
             <thead class="thead-dark">
@@ -71,7 +79,8 @@ $num_days = cal_days_in_month(CAL_GREGORIAN, $current_month, $current_year);
                         echo '<td scope="row">' . $user['name'] . '</td>';
 
                         //Iterate through all available days for this month
-                        for ( $iter = 1; $iter <= $num_days; $iter++) {
+                        for ( $iter = 1; $iter <= $num_days; $iter++)
+                        {
                             
                             //For each pass grab any attendance that this particular user might of had for that day
                             $attendance = $database->select("attendance", [

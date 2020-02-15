@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Include medoo which is being utilized for interacting with the database
 require 'Medoo.php';
 
@@ -9,8 +10,16 @@ use Medoo\Medoo;
 //Modify these settings to match your own configuration.
 $database = new Medoo([
     'database_type' => 'mysql',
-    'database_name' => 'logs',
+    'database_name' => 'admin_panel',
     'server'        => 'localhost',
     'username'      => 'logsadmin',
     'password'      => 'qwerty'
 ]);
+
+// $database = new Medoo([
+//     'database_type' => 'mysql',
+//     'database_name' => 'logs',
+//     'server'        => 'localhost',
+//     'username'      => 'logsadmin',
+//     'password'      => 'qwerty'
+// ]);
