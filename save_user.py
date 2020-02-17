@@ -10,12 +10,12 @@ db = mysql.connector.connect(
   host="localhost",
   user="logsadmin",
   passwd="qwerty",
-  database="logs"
+  database="Admin_Panel"
 )
 
 cursor = db.cursor()
 reader = SimpleMFRC522()
-lcd = LCD.Adafruit_CharLCD(4, 24, 23, 17, 18, 22, 16, 2, 4);
+lcd = LCD.Adafruit_CharLCD(4, 24, 23, 17, 18, 22, 16, 2, 14);
 
 try:
   while True:
